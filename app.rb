@@ -13,49 +13,49 @@ end
 
 
 get("/Rock") do
-"We played Rock"
-"They played "picked_word"
+
   words = ["Rock", "Paper", "Scissors"]
   picked_word = words.sample
   puts picked_word
-end
 
-if picked_word="Rock"
-else "We Tied!"
-if picked_word="Paper"
-else "We Lost!"
-if picked_word="Scissors"
+result= if picked_word=="Rock"
+ "We Tied!"
+elsif picked_word=="Paper"
+"We Lost!"
 else "We Won!"
 end
 
+"We played Rock\nThey played #{picked_word}!\n#{result}\n<li><a href=\"/\">Rules</a></li>"
+end
+
 get("/Paper") do
-  "We played Paper"
-  "They played "picked_word"
     words = ["Rock", "Paper", "Scissors"]
     picked_word = words.sample
     puts picked_word
-  end
-  
-  if picked_word="Rock"
-  else "We Won!"
-  if picked_word="Paper"
-  else "We Tied!"
-  if picked_word="Scissors"
+
+  result=if picked_word=="Rock"
+  "We Won!"
+  elsif picked_word=="Paper"
+ "We Tied!"
   else "We Lost!"
   end
 
+  "We played Paper\nThey played #{picked_word}!\n#{result}\n<li><a href=\"/\">Rules</a></li>"
+  
+end
+
   get("/Scissors") do
-    "We played Scissors"
-    "They played "picked_word"
       words = ["Rock", "Paper", "Scissors"]
       picked_word = words.sample
       puts picked_word
-    end
     
-    if picked_word="Rock"
-    else "We Lost!"
-    if picked_word="Paper"
-    else "We Won!"
-    if picked_word="Scissors"
+    result=if picked_word=="Rock"
+  "We Lost!"
+    elsif picked_word=="Paper"
+    "We Won!"
     else "We Tied!"
     end
+
+    "We played Scissors\nThey played #{picked_word}!\n #{result}\n<li><a href=\"/\">Rules</a></li>""
+
+  end
